@@ -1,0 +1,59 @@
+<html>
+    <head><title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script>
+        function clickdigit(num){
+            document.querySelector("#textarea").value=document.querySelector("#textarea").value+num
+        }
+        function clean(){
+            
+            document.querySelector("#textarea").value='';
+        }
+        function result(){
+            var temp;
+            temp=eval( document.querySelector("#textarea").value)
+            document.querySelector("#textarea").value=temp
+        }
+    </script>
+    </head>
+    <body>
+        <div class='main'>
+            <div class='container'>
+                <h2><center><legend> Calculator  </legend></center></h2>
+                <div class="playArea" >
+                    <textarea name="textarea" id="textarea" cols="33" rows="2"></textarea>
+                    <table>
+                        <tr>
+                            <td><input type="button" class='digit' value='C' onclick="clean()"></input></td>
+                            <td><input type="button" class='digit' value='/' onclick="clickdigit('/')"></input></td>
+                            <td><input type="button" class='digit' value='*' onclick="clickdigit('*')"></input></td>
+                            <td><input type="button" class='digit' value='+' onclick="clickdigit('+')"></input></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" class='digit' value='7' onclick=clickdigit(7)></input></td>
+                            <td><input type="button" class='digit' value='8' onclick=clickdigit(8)></input></td>
+                            <td><input type="button" class='digit' value='9' onclick=clickdigit(9)></input></td>
+                            <td ><input type="button" class='digit' value='-' onclick="clickdigit('-')"></input></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" class='digit' value='4' onclick=clickdigit(4)></input></td>
+                            <td><input type="button" class='digit' value='5' onclick=clickdigit(5)></input></td>
+                            <td><input type="button" class='digit' value='6' onclick=clickdigit(6)></input></td>
+                            <td rowspan="4"><input style="width:100%; height:155px;" type="button" class='digit' value='=' onclick="result()"></input></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" class='digit' value='1' onclick="clickdigit(1)" ></input></td>
+                            <td><input type="button" class='digit' value='2' onclick=clickdigit(2)></input></td>
+                            <td><input type="button" class='digit' value='3' onclick=clickdigit(3)></input></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input style="width:100%;" type="button" class='digit' value='0' onclick="clickdigit('/')"></input></td>
+                            <td><input type="button" class='digit' value='.' onclick="clickdigit('.')"></input></td>
+                            
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
